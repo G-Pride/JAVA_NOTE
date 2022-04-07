@@ -13,4 +13,4 @@
 
 #### 扎实基础
 
-[ArrayList和LinkedList](./扎实基础/ArrayList和LinkedList.md)
+- [ArrayList和LinkedList](./扎实基础/ArrayList和LinkedList.md)
