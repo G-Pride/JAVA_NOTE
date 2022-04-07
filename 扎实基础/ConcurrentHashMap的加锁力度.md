@@ -30,6 +30,8 @@ JDK1.7是用单链表进行的纵向延伸，当采用头插法时会容易出�
 
 8=2^3，这样链表调整成往往会是3阶的红黑树；而8个以下的链表查询性能跟对应的红黑树查询性能比较起来相差无几，但比起链表，红黑树的空间占用却增加了，在这种情况下做转化，反而会影响性能。
 
+
+
 线程安全问题知道了，接下来了解是怎么做线程安全的？就是通过ConcurrentHashMap。
 
 
@@ -50,7 +52,7 @@ JDK1.7是用单链表进行的纵向延伸，当采用头插法时会容易出�
 
 在jdk1.8之后，ConcurrentHashMap参考了JDK1.8 HashMap的实现，采用了数组+链表+红黑树的实现方式来设计，采用CAS+synchronized操作（第10行和第18行代码）。将加锁力度细化到了最小的Node上，即每一个槽位。并发性能也得到优化。
 
-```
+```java
 final V putVal(K key, V value, boolean onlyIfAbsent) {
         if (key == null || value == null) throw new NullPointerException();
         int hash = spread(key.hashCode());

@@ -10,7 +10,7 @@ ArrayList和LinkedList，其实就是数组与链表的区别
 
 鉴于两者的数据结构，**数组适合查找，链表更适合修改**，是不是数组不适合应用于增加呢？不是的，当不指定位置时，ArrayList默认是添加到末尾，这时时间复杂度跟LinkedList是相同的，比如：
 
-```
+```java
 public class Test {
     
     static final int N=50000;
@@ -38,7 +38,7 @@ LinkedList耗时：3
 
 可见此时两者是一样的，那如果是指定位置，那数组意味着会有数据移动和复制上的开销，验证如下：
 
-```
+```java
 public class Test {
 
     static final int N=50000;
@@ -72,7 +72,7 @@ LinkedList耗时：3
 
 至于查询，可以通过数据简单比对一下，在10000000个数中进行测试
 
-```
+```java
 
 public class Test {
 
@@ -109,7 +109,7 @@ public class Test {
 
 为什么LinkedList只有在查询中间的时候才会耗时过长？从源码中我们可以找到答案
 
-```
+```java
 public E get(int index) {
         checkElementIndex(index);
         return node(index).item;
