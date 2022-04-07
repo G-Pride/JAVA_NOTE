@@ -10,11 +10,11 @@ HashMap的线程安全问题是多个线程同时操作，在【哈希碰撞】�
 
 即当两个key hash之后槽位值相同，就会以链表的形式存在，这个过程叫【哈希碰撞】。
 
-在jdk1.8之前，发生【哈希碰撞】后会以链表的形式存在，但是会存在一种极端的情况就是，所有的key hash值相同，就会是一大串的链表，HashMap将失去其意义，而链表并不适合查询。
+在Jdk1.8之前，发生【哈希碰撞】后会以链表的形式存在，但是会存在一种极端的情况就是，所有的key hash值相同，就会是一大串的链表，HashMap将失去其意义，而链表并不适合查询。
 
 
 
-JDK1.7是用单链表进行的纵向延伸，当采用头插法时会容易出现逆序且环形链表死循环问题。但是在JDK1.8之后是因为加入了红黑树使用尾插法，能够避免出现逆序且链表死循环的问题。这死循环探讨并没有什么意义，因为是使用HashMap做并发的时候才会发生，而官方并不建议使用HashMap做并发，推荐使用ConcurrentHashMap。
+Jdk1.7是用单链表进行的纵向延伸，当采用头插法时会容易出现逆序且环形链表死循环问题。但是在Jdk1.8之后是因为加入了红黑树使用尾插法，能够避免出现逆序且链表死循环的问题。这死循环探讨并没有什么意义，因为是使用HashMap做并发的时候才会发生，而官方并不建议使用HashMap做并发，推荐使用ConcurrentHashMap。
 
 
 
@@ -38,7 +38,7 @@ JDK1.7是用单链表进行的纵向延伸，当采用头插法时会容易出�
 
 **ConcurrentHashMap**
 
-在jdk1.8之前，ConcurrentHashMap是采用数组+Segment+分段锁的方式实现
+在Jdk1.8之前，ConcurrentHashMap是采用数组+Segment+分段锁的方式实现
 
 ![comsurrentHashMapSegment](../images/comsurrentHashMapSegment.png)
 
@@ -50,7 +50,7 @@ JDK1.7是用单链表进行的纵向延伸，当采用头插法时会容易出�
 
 
 
-在jdk1.8之后，ConcurrentHashMap参考了JDK1.8 HashMap的实现，采用了数组+链表+红黑树的实现方式来设计，采用CAS+synchronized操作（第10行和第18行代码）。将加锁力度细化到了最小的Node上，即每一个槽位。并发性能也得到优化。
+在Jdk1.8之后，ConcurrentHashMap参考了Jdk1.8 HashMap的实现，采用了数组+链表+红黑树的实现方式来设计，采用CAS+synchronized操作（第10行和第18行代码）。将加锁力度细化到了最小的Node上，即每一个槽位。并发性能也得到优化。
 
 ```java
 final V putVal(K key, V value, boolean onlyIfAbsent) {
