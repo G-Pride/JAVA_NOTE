@@ -44,7 +44,7 @@ Jdk1.7是用单链表进行的纵向延伸，当采用头插法时会容易出�
 
 这种方式定位一个元素的过程需要进行两次Hash操作。第一次Hash定位到Segment，第二次Hash定位到元素所在的链表的头部。
 
-#### 
+
 
 该结构坏处是这一种结构的带来的副作用是Hash的过程要比普通的HashMap要长。
 
@@ -116,5 +116,20 @@ final V putVal(K key, V value, boolean onlyIfAbsent) {
         addCount(1L, binCount);
         return null;
     }
+```
+
+
+
+使用方法：
+
+```java
+//线程安全的+无序+不重复，相当于线程安全的HashMap
+Map<Integer, Integer> map = new ConcurrentHashMap<>();
+
+//线程安全的+有序+不重复，相当于线程安全的TreeMap，key和value都不可以为空。
+Map<Integer, Integer> map = new ConcurrentSkipListMap<>();
+
+//线程安全的+有序+不重复，相当于线程安全的TreeSet，ConcurrentSkipListSet的底层还是通过ConcurrentSkipListMap来实现的
+Set<Integer> set = new ConcurrentSkipListSet<>();
 ```
 
