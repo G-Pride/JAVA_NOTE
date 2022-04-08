@@ -15,7 +15,6 @@
 
 - [ArrayList和LinkedList](./扎实基础/ArrayList和LinkedList.md)
 - [ConcurrentHashMap的加锁力度](./扎实基础/ConcurrentHashMap的加锁力度.md)
-
 - [线程池](./扎实基础/线程池.md)
 - [同步锁](./扎实基础/同步锁.md)
 - [CopyOnWrite容器](./扎实基础/CopyOnWrite容器.md)
