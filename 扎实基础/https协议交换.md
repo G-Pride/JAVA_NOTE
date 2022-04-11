@@ -44,11 +44,11 @@ https也就是我们的一个安全的http传输协议，通过加密算法去�
 
 ![企业微信截图_245ff6e5-6a0d-4819-a895-7dacfdebaa79](../images/企业微信截图_245ff6e5-6a0d-4819-a895-7dacfdebaa79.png)
 
-​										图1-数字证书三部分
+<div align = "center">图1-数字证书三部分</div>
 
 
 
-![企业微信截图_5cf2ce63-80e6-4fec-b156-846ea5a754d3](../images/企业微信截图_5cf2ce63-80e6-4fec-b156-846ea5a754d3.png)
+![企业微信截图_5cf2ce63-80e6-4fec-b156-846ea5a754d3](../images/企业微信截图_5cf2ce63-80e6-4fec-b156-846ea5a754d3.png)						
 
-​										图2-验证证书真伪
+<div align = "center">图2-验证证书真伪</div>
 
