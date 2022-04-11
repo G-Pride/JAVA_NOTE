@@ -21,28 +21,12 @@
 - [同步锁](./扎实基础/同步锁.md)
 - [CopyOnWrite容器](./扎实基础/CopyOnWrite容器.md)
 - [Volatile关键字](./扎实基础/Volatile关键字.md)
-- BIO-NIO-AIO
 
 
 ##### 数据库
 
-- 快照读和当前读
-- 行锁-表锁-间隙锁
-- 事务隔离级别
-
-##### Redis
-
-- zset=跳表+压缩表
-- RDB和AOF
-- 淘汰策略及setnx原子性
-
-##### MQ
-
-- 消息队列的构成
-- 消息消费确认
+- [快照读、当前读、索引锁](./扎实基础/快照读、当前读、索引锁机制.md)
 
 ##### 网络
 
-- select和epoll
-- https协议交换
-- http2.0协议
+- [https协议交换](./扎实基础/https协议交换.md)
